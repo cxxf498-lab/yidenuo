@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YideNuo - Professional Offshore Marketing & IT Solutions</title>
+<meta name="description" content="YideNuo is a technology company focusing on offshore marketing and system custom development. We provide Business Intelligence, KOL Marketing, and Data SAAS services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        navy: {
+          50: '#f0f4f8',
+          100: '#d9e2ec',
+          200: '#bcccdc',
+          300: '#9fb3c8',
+          400: '#829ab1',
+          500: '#627d98',
+          600: '#486581',
+          700: '#334e68',
+          800: '#243b53',
+          900: '#0F172A',
+        },
+        sky: {
+          DEFAULT: '#0EA5E9',
+          light: '#7DD3FC',
+          dark: '#0284C7',
+        },
+        cyan: {
+          DEFAULT: '#06B6D4',
+          light: '#67E8F9',
+          dark: '#0891B2',
+        },
+        royal: {
+          DEFAULT: '#2563EB',
+          light: '#60A5FA',
+          dark: '#1D4ED8',
+        },
+      },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #0C4A6E 100%)',
+        'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
+        'cta-gradient': 'linear-gradient(135deg, #2563EB 0%, #0EA5E9 100%)',
+        'card-shine': 'linear-gradient(135deg, rgba(14,165,233,0.08) 0%, rgba(6,182,212,0.12) 100%)',
+      },
+      boxShadow: {
+        'glass': '0 8px 32px rgba(15,23,42,0.08)',
+        'glass-hover': '0 16px 48px rgba(15,23,42,0.12)',
+        'card': '0 1px 3px rgba(15,23,42,0.06), 0 4px 16px rgba(15,23,42,0.04)',
+        'card-hover': '0 4px 8px rgba(15,23,42,0.08), 0 16px 40px rgba(15,23,42,0.06)',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out 2s infinite',
+        'fade-up': 'fadeUp 0.6s ease-out forwards',
+        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+        'count-up': 'countUp 2s ease-out forwards',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        pulseSoft: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' },
+        },
+      },
+    },
+  },
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; }
+.glass-card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+.glass-card-dark {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.gradient-text {
+  background: linear-gradient(135deg, #0EA5E9, #06B6D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-border {
+  position: relative;
+}
+.gradient-border::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #0EA5E9, #06B6D4);
+  border-radius: 2px;
+}
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+}
+.count-number { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body class="bg-[#F8FAFC] text-[#1E293B] antialiased">
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky to-cyan flex items-center justify-center shadow-lg shadow-sky/25 transition-transform duration-300 group-hover:scale-105">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <span id="nav-logo" class="text-xl font-display font-bold text-white">Yide<span class="text-sky-light">Nuo</span></span>
+      </a>
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#home" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors duration-300">Home</a>
+        <a href="#about" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors duration-300">About</a>
+        <a href="#services" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors duration-300">Services</a>
+        <a href="#pricing" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors duration-300">Pricing</a>
+        <a href="#testimonials" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors duration-300">Testimonials</a>
+        <a href="#contact" class="inline-flex items-center px-5 py-2.5 rounded-full bg-cta-gradient text-white text-sm font-semibold shadow-lg shadow-royal/25 hover:shadow-xl hover:shadow-royal/35 transition-all duration-300 hover:-translate-y-0.5">
+          Contact Us
+        </a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Menu">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path id="menu-icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white/95 backdrop-blur-xl border-t border-navy-100">
+    <div class="px-4 py-4 space-y-3">
+      <a href="#home" class="block px-4 py-2.5 rounded-lg text-navy-700 font-medium hover:bg-navy-50 transition-colors">Home</a>
+      <a href="#about" class="block px-4 py-2.5 rounded-lg text-navy-700 font-medium hover:bg-navy-50 transition-colors">About</a>
+      <a href="#services" class="block px-4 py-2.5 rounded-lg text-navy-700 font-medium hover:bg-navy-50 transition-colors">Services</a>
+      <a href="#pricing" class="block px-4 py-2.5 rounded-lg text-navy-700 font-medium hover:bg-navy-50 transition-colors">Pricing</a>
+      <a href="#testimonials" class="block px-4 py-2.5 rounded-lg text-navy-700 font-medium hover:bg-navy-50 transition-colors">Testimonials</a>
+      <a href="#contact" class="block px-4 py-2.5 rounded-full text-center bg-cta-gradient text-white font-semibold shadow-lg">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section id="home" class="relative min-h-screen flex items-center bg-hero-gradient overflow-hidden">
+  <!-- Animated blobs -->
+  <div class="hero-blob w-[500px] h-[500px] bg-sky -top-40 -right-40 animate-float"></div>
+  <div class="hero-blob w-[400px] h-[400px] bg-cyan bottom-0 left-1/4 animate-float-delayed"></div>
+  <div class="hero-blob w-[300px] h-[300px] bg-royal top-1/2 right-1/3 animate-float"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Text -->
+      <div class="text-white space-y-8">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card-dark text-sky-light text-sm font-medium">
+          <span class="w-2 h-2 rounded-full bg-cyan animate-pulse-soft"></span>
+          Trusted by 200+ Global Enterprises
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight">
+          Professional Strength,<br>
+          <span class="gradient-text">Industry Reputation</span>
+        </h1>
+        <p class="text-lg text-navy-200 max-w-lg leading-relaxed">
+          Deep cultivation of vertical fields, providing sub-industry solutions. With years of marketing experience, we deliver 3 major marketing services and a breakthrough SAAS marketing product.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#services" class="inline-flex items-center px-7 py-3.5 rounded-full bg-cta-gradient text-white font-semibold shadow-xl shadow-royal/30 hover:shadow-2xl hover:shadow-royal/40 transition-all duration-300 hover:-translate-y-0.5">
+            Discover More
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#about" class="inline-flex items-center px-7 py-3.5 rounded-full border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-300">
+            About Us
+          </a>
+        </div>
+        <!-- Stats mini -->
+        <div class="flex gap-8 pt-4">
+          <div><div class="text-3xl font-display font-bold text-sky-light">200<span class="text-xl">+</span></div><div class="text-sm text-navy-300">Projects Done</div></div>
+          <div><div class="text-3xl font-display font-bold text-cyan-light">783<span class="text-xl">+</span></div><div class="text-sm text-navy-300">Partners</div></div>
+          <div><div class="text-3xl font-display font-bold text-sky-light">356<span class="text-xl">+</span></div><div class="text-sm text-navy-300">Brands Served</div></div>
+        </div>
+      </div>
+      <!-- Hero Visual -->
+      <div class="hidden lg:block relative">
+        <div class="glass-card-dark rounded-3xl p-8 space-y-6">
+          <div class="flex items-center gap-3 pb-4 border-b border-white/10">
+            <div class="flex gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-red-400"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+              <span class="w-3 h-3 rounded-full bg-green-400"></span>
+            </div>
+            <span class="text-navy-300 text-sm">YideNuo Dashboard</span>
+          </div>
+          <!-- Mock dashboard -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card-dark rounded-xl p-4">
+              <div class="text-navy-400 text-xs mb-2">Active Campaigns</div>
+              <div class="text-2xl font-display font-bold text-white">48</div>
+              <div class="text-green-400 text-xs mt-1">+12% this week</div>
+            </div>
+            <div class="glass-card-dark rounded-xl p-4">
+              <div class="text-navy-400 text-xs mb-2">KOL Reach</div>
+              <div class="text-2xl font-display font-bold text-white">3.2M</div>
+              <div class="text-green-400 text-xs mt-1">+8.5% growth</div>
+            </div>
+            <div class="glass-card-dark rounded-xl p-4">
+              <div class="text-navy-400 text-xs mb-2">ROI Average</div>
+              <div class="text-2xl font-display font-bold text-cyan-light">247%</div>
+              <div class="text-green-400 text-xs mt-1">+15% vs last Q</div>
+            </div>
+            <div class="glass-card-dark rounded-xl p-4">
+              <div class="text-navy-400 text-xs mb-2">Countries</div>
+              <div class="text-2xl font-display font-bold text-sky-light">103</div>
+              <div class="text-green-400 text-xs mt-1">27 languages</div>
+            </div>
+          </div>
+          <!-- Chart bars -->
+          <div class="flex items-end gap-2 h-20 pt-4">
+            <div class="flex-1 bg-gradient-to-t from-sky to-cyan rounded-t-md" style="height:60%"></div>
+            <div class="flex-1 bg-gradient-to-t from-sky to-cyan rounded-t-md" style="height:80%"></div>
+            <div class="flex-1 bg-gradient-to-t from-sky to-cyan rounded-t-md" style="height:45%"></div>
+            <div class="flex-1 bg-gradient-to-t from-sky to-cyan rounded-t-md" style="height:90%"></div>
+            <div class="flex-1 bg-gradient-to-t from-sky to-cyan rounded-t-md" style="height:70%"></div>
+            <div class="flex-1 bg-gradient-to-t from-sky to-cyan rounded-t-md" style="height:100%"></div>
+            <div class="flex-1 bg-gradient-to-t from-sky to-cyan rounded-t-md" style="height:55%"></div>
+            <div class="flex-1 bg-gradient-to-t from-sky to-cyan rounded-t-md" style="height:85%"></div>
+          </div>
+          <div class="flex justify-between text-xs text-navy-400">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom fade -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F8FAFC] to-transparent"></div>
+</section>
+
+<!-- ==================== ABOUT SECTION ==================== -->
+<section id="about" class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left -->
+      <div class="space-y-8">
+        <div class="space-y-4">
+          <span class="text-sm font-semibold text-sky uppercase tracking-wider gradient-border pb-3">About YideNuo</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-navy-900 leading-tight">
+            Get Better Solution<br>For Your Business
+          </h2>
+          <p class="text-navy-600 leading-relaxed">
+            We are a technology company focusing on offshore marketing and system custom development, with many years of industry experience and a professional technical team. We are committed to providing enterprises with a full range of IT solutions to help enterprises achieve digital transformation and global development.
+          </p>
+        </div>
+        <!-- Mission & Vision Cards -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="glass-card rounded-2xl p-6 shadow-glass hover:shadow-glass-hover transition-shadow duration-300">
+            <div class="w-10 h-10 rounded-xl bg-sky/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-navy-900 mb-2">Our Mission</h3>
+            <p class="text-sm text-navy-500">We are committed to helping enterprises realize the dream of brand going to sea.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 shadow-glass hover:shadow-glass-hover transition-shadow duration-300">
+            <div class="w-10 h-10 rounded-xl bg-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-navy-900 mb-2">24/7 Support</h3>
+            <p class="text-sm text-navy-500">We provide 24/7 after-sales technical support and weekday pre-sales support.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Right - Image placeholder -->
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900 overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
+          <div class="relative flex items-center justify-center h-full p-12">
+            <div class="text-center space-y-6">
+              <div class="w-20 h-20 mx-auto rounded-2xl bg-white/10 backdrop-blur flex items-center justify-center">
+                <svg class="w-10 h-10 text-sky-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+              </div>
+              <div>
+                <div class="text-4xl font-display font-bold text-white mb-1">1000<span class="text-2xl text-sky-light">+</span></div>
+                <p class="text-navy-300">IT Consultants Worldwide</p>
+              </div>
+              <p class="text-navy-300 text-sm max-w-xs mx-auto">Ready to respond and provide professional solutions for your global marketing needs.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Floating badge -->
+        <div class="absolute -bottom-6 -right-6 glass-card rounded-2xl px-6 py-4 shadow-glass flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-bold text-navy-900">98%</div>
+            <div class="text-xs text-navy-500">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICES SECTION ==================== -->
+<section id="services" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <span class="text-sm font-semibold text-sky uppercase tracking-wider">What We Do</span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-navy-900">Our Products and Services</h2>
+      <p class="text-navy-500">Comprehensive offshore marketing solutions powered by data intelligence and professional expertise.</p>
+    </div>
+    <!-- Service Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Service 1 -->
+      <div class="group relative bg-white rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 border border-navy-100 hover:border-sky/20">
+        <div class="absolute inset-0 rounded-3xl bg-card-shine opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative space-y-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky/10 to-cyan/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-7 h-7 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="text-xl font-display font-bold text-navy-900">Business Intelligence</h3>
+          <p class="text-navy-500 leading-relaxed">Business intelligence covers all key links of offshore operations, and technology improves global business growth.</p>
+          <a href="#" class="inline-flex items-center text-sm font-semibold text-sky hover:text-cyan transition-colors gap-1">
+            Learn more
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Service 2 -->
+      <div class="group relative bg-white rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 border border-navy-100 hover:border-cyan/20">
+        <div class="absolute inset-0 rounded-3xl bg-card-shine opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative space-y-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan/10 to-sky/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-7 h-7 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-display font-bold text-navy-900">KOL Marketing</h3>
+          <p class="text-navy-500 leading-relaxed">Access global KOL resources across 103 countries and 27 languages, with 3M+ influencer network to boost your brand.</p>
+          <a href="#" class="inline-flex items-center text-sm font-semibold text-cyan hover:text-sky transition-colors gap-1">
+            Learn more
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Service 3 -->
+      <div class="group relative bg-white rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 border border-navy-100 hover:border-sky/20">
+        <div class="absolute inset-0 rounded-3xl bg-card-shine opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative space-y-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky/10 to-royal/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-7 h-7 text-royal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+          </div>
+          <h3 class="text-xl font-display font-bold text-navy-900">Data SAAS Service</h3>
+          <p class="text-navy-500 leading-relaxed">A one-stop cross-media delivery tool for offshore teams. Cross-account advertising aggregation management with full-scene closed loop.</p>
+          <a href="#" class="inline-flex items-center text-sm font-semibold text-royal hover:text-sky transition-colors gap-1">
+            Learn more
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRICING SECTION ==================== -->
+<section id="pricing" class="py-24 lg:py-32 bg-[#F8FAFC]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <span class="text-sm font-semibold text-sky uppercase tracking-wider">Our SAAS Service Prices</span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-navy-900">Pricing Table</h2>
+      <p class="text-navy-500">Choose the right plan for your business needs. Scale as you grow.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Plan 1 - Personal Studio -->
+      <div class="glass-card rounded-3xl p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300 hover:-translate-y-1">
+        <div class="space-y-6">
+          <h3 class="text-lg font-display font-semibold text-navy-900">Personal Studio</h3>
+          <div class="flex items-baseline gap-1">
+            <span class="text-4xl font-display font-bold text-navy-900">$29</span>
+            <span class="text-navy-400">/mo</span>
+          </div>
+          <ul class="space-y-3 text-sm text-navy-600">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>3 Users</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Basic function</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Last month's data</li>
+          </ul>
+          <a href="#" class="block w-full py-3 text-center rounded-full border-2 border-navy-200 text-navy-700 font-semibold hover:border-sky hover:text-sky transition-all duration-300">Get Started</a>
+        </div>
+      </div>
+      <!-- Plan 2 - Start-up (Popular) -->
+      <div class="relative glass-card rounded-3xl p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300 hover:-translate-y-1 ring-2 ring-sky">
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-cta-gradient text-white text-xs font-bold rounded-full shadow-lg">Popular</span>
+        <div class="space-y-6">
+          <h3 class="text-lg font-display font-semibold text-navy-900">Start-up Team</h3>
+          <div class="flex items-baseline gap-1">
+            <span class="text-4xl font-display font-bold text-navy-900">$55</span>
+            <span class="text-navy-400">/mo</span>
+          </div>
+          <ul class="space-y-3 text-sm text-navy-600">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>5 Users</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Data analysis</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Manual data import</li>
+          </ul>
+          <a href="#" class="block w-full py-3 text-center rounded-full bg-cta-gradient text-white font-semibold shadow-lg shadow-royal/25 hover:shadow-xl hover:shadow-royal/35 transition-all duration-300">Get Started</a>
+        </div>
+      </div>
+      <!-- Plan 3 - Professional -->
+      <div class="glass-card rounded-3xl p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300 hover:-translate-y-1">
+        <div class="space-y-6">
+          <h3 class="text-lg font-display font-semibold text-navy-900">Professional</h3>
+          <div class="flex items-baseline gap-1">
+            <span class="text-4xl font-display font-bold text-navy-900">$199</span>
+            <span class="text-navy-400">/mo</span>
+          </div>
+          <ul class="space-y-3 text-sm text-navy-600">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>10 Users</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Cross-platform data linkage</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Intelligent data analysis</li>
+          </ul>
+          <a href="#" class="block w-full py-3 text-center rounded-full border-2 border-navy-200 text-navy-700 font-semibold hover:border-sky hover:text-sky transition-all duration-300">Get Started</a>
+        </div>
+      </div>
+      <!-- Plan 4 - Platinum -->
+      <div class="glass-card rounded-3xl p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300 hover:-translate-y-1">
+        <div class="space-y-6">
+          <h3 class="text-lg font-display font-semibold text-navy-900">Platinum</h3>
+          <div class="flex items-baseline gap-1">
+            <span class="text-4xl font-display font-bold text-navy-900">$599</span>
+            <span class="text-navy-400">/mo</span>
+          </div>
+          <ul class="space-y-3 text-sm text-navy-600">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unlimited Users</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Private deployment</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>24h service team</li>
+          </ul>
+          <a href="#" class="block w-full py-3 text-center rounded-full border-2 border-navy-200 text-navy-700 font-semibold hover:border-sky hover:text-sky transition-all duration-300">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY CHOOSE US ==================== -->
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <span class="text-sm font-semibold text-sky uppercase tracking-wider">Best Agency For You</span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-navy-900">Why Choose Our Solutions</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Feature 1 -->
+      <div class="text-center space-y-4 group">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-sky/10 to-sky/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-8 h-8 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-navy-900">Intelligent KOL Application Tool</h3>
+        <p class="text-sm text-navy-500 leading-relaxed">Independent R&D of overseas celebrities data analysis platform, screening high-quality celebrities through data analysis to improve marketing effect.</p>
+      </div>
+      <!-- Feature 2 -->
+      <div class="text-center space-y-4 group">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-cyan/10 to-cyan/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-8 h-8 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-navy-900">Access to Global KOL Resources</h3>
+        <p class="text-sm text-navy-500 leading-relaxed">KOL resources in 103 countries, covering 27 languages. 3M+ influencer resources across Europe, North America, Southeast Asia, and the Middle East.</p>
+      </div>
+      <!-- Feature 3 -->
+      <div class="text-center space-y-4 group">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-royal/10 to-royal/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-8 h-8 text-royal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-navy-900">Focus on Quality Service</h3>
+        <p class="text-sm text-navy-500 leading-relaxed">All-in hosting service including copywriting customization, picture design, and strategy planning during KOL cooperation, greatly reducing overseas marketing costs.</p>
+      </div>
+      <!-- Feature 4 -->
+      <div class="text-center space-y-4 group">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-sky/10 to-cyan/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-8 h-8 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-navy-900">Professional Authoritative Data Analysis</h3>
+        <p class="text-sm text-navy-500 leading-relaxed">Final closing report with market analysis, KOL matching, and market effect review. Speak with data to analyze your brand's global journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STATS COUNTER ==================== -->
+<section class="py-20 bg-hero-gradient relative overflow-hidden">
+  <div class="hero-blob w-[400px] h-[400px] bg-sky -top-20 -left-20"></div>
+  <div class="hero-blob w-[350px] h-[350px] bg-cyan -bottom-20 -right-20"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="space-y-2">
+        <div class="text-5xl font-display font-bold text-white count-number">200<span class="text-2xl text-sky-light">+</span></div>
+        <p class="text-navy-300 text-sm">Project Complete</p>
+        <p class="text-navy-400 text-xs">Settled more than 200 customers from different industries, through our products, to achieve marketing goals.</p>
+      </div>
+      <div class="space-y-2">
+        <div class="text-5xl font-display font-bold text-white count-number">783<span class="text-2xl text-cyan-light">+</span></div>
+        <p class="text-navy-300 text-sm">Business Partners</p>
+        <p class="text-navy-400 text-xs">Through data analysis, high-quality celebrities are selected to match with enterprises.</p>
+      </div>
+      <div class="space-y-2">
+        <div class="text-5xl font-display font-bold text-white count-number">356<span class="text-2xl text-sky-light">+</span></div>
+        <p class="text-navy-300 text-sm">Brand to Sea</p>
+        <p class="text-navy-400 text-xs">Many partners have successfully promoted their own brands and products overseas.</p>
+      </div>
+      <div class="space-y-2">
+        <div class="text-5xl font-display font-bold text-white count-number">1000<span class="text-2xl text-cyan-light">+</span></div>
+        <p class="text-navy-300 text-sm">IT Consultant</p>
+        <p class="text-navy-400 text-xs">IT consultants around the world, ready to respond, to provide you with professional solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section id="testimonials" class="py-24 lg:py-32 bg-[#F8FAFC]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <span class="text-sm font-semibold text-sky uppercase tracking-wider">Client Feedback</span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-navy-900">Our Clients Feedbacks</h2>
+      <p class="text-navy-500">Hear what our clients say about working with YideNuo.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Testimonial 1 -->
+      <div class="glass-card rounded-3xl p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300">
+        <div class="flex gap-1 mb-4">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-navy-600 leading-relaxed mb-6">"Thanks to YideNuo's professional services, our products have achieved remarkable growth in overseas markets. In just a few months, our overseas sales have increased by more than 30%."</p>
+        <div class="flex items-center gap-4 pt-4 border-t border-navy-100">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sky to-cyan flex items-center justify-center text-white font-bold text-lg">M</div>
+          <div>
+            <div class="font-display font-semibold text-navy-900">Miranda H. Halim</div>
+            <div class="text-sm text-navy-400">Founder, Media Industry</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="glass-card rounded-3xl p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300">
+        <div class="flex gap-1 mb-4">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-navy-600 leading-relaxed mb-6">"Through YideNuo's offshore marketing SaaS platform, we have successfully promoted our products to overseas markets. The data analysis function is very powerful, helping us accurately target customers and optimize marketing strategies."</p>
+        <div class="flex items-center gap-4 pt-4 border-t border-navy-100">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan to-sky flex items-center justify-center text-white font-bold text-lg">A</div>
+          <div>
+            <div class="font-display font-semibold text-navy-900">Ahmad Ali</div>
+            <div class="text-sm text-navy-400">Marketing Director</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="glass-card rounded-3xl p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300">
+        <div class="flex gap-1 mb-4">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-navy-600 leading-relaxed mb-6">"YideNuo's team is very professional and has a good understanding of our needs. In the process of cooperation, they are able to respond to our problems in a timely manner and provide effective solutions. We are very satisfied with the quality of their service."</p>
+        <div class="flex items-center gap-4 pt-4 border-t border-navy-100">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sky to-royal flex items-center justify-center text-white font-bold text-lg">N</div>
+          <div>
+            <div class="font-display font-semibold text-navy-900">Noraini bt Hassan</div>
+            <div class="text-sm text-navy-400">Technology Director, Cross-border Payment</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 4 -->
+      <div class="glass-card rounded-3xl p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300">
+        <div class="flex gap-1 mb-4">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-navy-600 leading-relaxed mb-6">"We not only get excellent service, but also save a lot of cost. Their services are very cost-effective and have helped us increase our return on investment. At the same time, it has accumulated rich marketing data and experience for us."</p>
+        <div class="flex items-center gap-4 pt-4 border-t border-navy-100">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-royal to-cyan flex items-center justify-center text-white font-bold text-lg">R</div>
+          <div>
+            <div class="font-display font-semibold text-navy-900">Ravi Kumar</div>
+            <div class="text-sm text-navy-400">Founder, FMCG Industry</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT / FOOTER ==================== -->
+<footer id="contact" class="bg-navy-900 text-white">
+  <!-- CTA Banner -->
+  <div class="border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="glass-card-dark rounded-3xl p-10 md:p-14 text-center space-y-6">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold">Ready to Grow Your Business Globally?</h2>
+        <p class="text-navy-300 max-w-xl mx-auto">Let's discuss how YideNuo can help you achieve your offshore marketing goals with our professional solutions.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="mailto:cxxf498@gmail.com" class="inline-flex items-center px-8 py-3.5 rounded-full bg-cta-gradient text-white font-semibold shadow-xl shadow-royal/30 hover:shadow-2xl hover:shadow-royal/40 transition-all duration-300 hover:-translate-y-0.5">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            cxxf498@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Main -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div class="md:col-span-1 space-y-4">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky to-cyan flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <span class="text-xl font-display font-bold">Yide<span class="text-sky-light">Nuo</span></span>
+        </a>
+        <p class="text-navy-400 text-sm leading-relaxed">A technology company focusing on offshore marketing and system custom development.</p>
+      </div>
+      <!-- Services -->
+      <div class="space-y-4">
+        <h3 class="font-display font-semibold text-white">Services</h3>
+        <ul class="space-y-2.5">
+          <li><a href="#" class="text-navy-400 hover:text-sky-light transition-colors text-sm">Business Intelligence</a></li>
+          <li><a href="#" class="text-navy-400 hover:text-sky-light transition-colors text-sm">KOL Marketing</a></li>
+          <li><a href="#" class="text-navy-400 hover:text-sky-light transition-colors text-sm">Data SAAS Service</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div class="space-y-4">
+        <h3 class="font-display font-semibold text-white">Company</h3>
+        <ul class="space-y-2.5">
+          <li><a href="#about" class="text-navy-400 hover:text-sky-light transition-colors text-sm">About Us</a></li>
+          <li><a href="#services" class="text-navy-400 hover:text-sky-light transition-colors text-sm">Our Services</a></li>
+          <li><a href="#pricing" class="text-navy-400 hover:text-sky-light transition-colors text-sm">Pricing</a></li>
+          <li><a href="#testimonials" class="text-navy-400 hover:text-sky-light transition-colors text-sm">Testimonials</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div class="space-y-4">
+        <h3 class="font-display font-semibold text-white">Contact</h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="mailto:cxxf498@gmail.com" class="text-navy-400 hover:text-sky-light transition-colors text-sm flex items-center gap-2">
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              cxxf498@gmail.com
+            </a>
+          </li>
+          <li class="text-navy-400 text-sm">Pre-sales consultation available</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-navy-500 text-sm">&copy; 2026 YideNuo. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="text-navy-500 hover:text-sky-light transition-colors text-sm">Privacy Policy</a>
+        <a href="#" class="text-navy-500 hover:text-sky-light transition-colors text-sm">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+// Navbar scroll effect
+const nav = document.getElementById('nav');
+const navLogo = document.getElementById('nav-logo');
+const navLinks = document.querySelectorAll('.nav-link');
+const menuBtnSvg = document.querySelector('#menu-btn svg');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-sm');
+    nav.classList.remove('bg-transparent');
+    // Switch to dark text on light background
+    navLogo.classList.remove('text-white');
+    navLogo.classList.add('text-navy-900');
+    navLogo.querySelector('span').classList.remove('text-sky-light');
+    navLogo.querySelector('span').classList.add('text-sky');
+    navLinks.forEach(link => {
+      link.classList.remove('text-white/80', 'hover:text-white');
+      link.classList.add('text-navy-700', 'hover:text-sky');
+    });
+    menuBtnSvg.classList.remove('text-white');
+    menuBtnSvg.classList.add('text-navy-900');
+  } else {
+    nav.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-sm');
+    nav.classList.add('bg-transparent');
+    // Switch to white text on dark background
+    navLogo.classList.add('text-white');
+    navLogo.classList.remove('text-navy-900');
+    navLogo.querySelector('span').classList.add('text-sky-light');
+    navLogo.querySelector('span').classList.remove('text-sky');
+    navLinks.forEach(link => {
+      link.classList.add('text-white/80', 'hover:text-white');
+      link.classList.remove('text-navy-700', 'hover:text-sky');
+    });
+    menuBtnSvg.classList.add('text-white');
+    menuBtnSvg.classList.remove('text-navy-900');
+  }
+});
+
+// Mobile menu toggle
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIconOpen = document.getElementById('menu-icon-open');
+const menuIconClose = document.getElementById('menu-icon-close');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  menuIconOpen.classList.toggle('hidden');
+  menuIconClose.classList.toggle('hidden');
+});
+
+// Close mobile menu on link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuIconOpen.classList.remove('hidden');
+    menuIconClose.classList.add('hidden');
+  });
+});
+
+// Intersection Observer for fade-up animations
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe cards for animation
+document.querySelectorAll('.glass-card, .group\\:hover\\:shadow-card-hover').forEach(el => {
+  if (el.closest('section') && !el.closest('#home') && !el.closest('footer')) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(el);
+  }
+});
+</script>
+</body>
+</html>
